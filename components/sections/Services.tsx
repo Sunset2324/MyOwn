@@ -22,16 +22,12 @@ const icons: Record<Service["icon"], React.ReactNode> = {
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <div className="group relative p-10 bg-[#181818] border border-white/[0.07] overflow-hidden hover:border-[rgba(201,168,76,0.2)] hover:bg-[rgba(201,168,76,0.02)] transition-all duration-300">
-      {/* Bottom gold bar on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#c9a84c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-400" />
-
-      {/* Icon */}
-      <div className="w-12 h-12 mb-7 border border-white/[0.07] rounded-sm flex items-center justify-center text-[#c9a84c] group-hover:border-[rgba(201,168,76,0.3)] transition-colors">
+    <div className="group relative p-8 md:p-10 bg-[#181818] border border-white/[0.07] overflow-hidden hover:border-[rgba(201,168,76,0.2)] hover:bg-[rgba(201,168,76,0.02)] transition-all duration-300">
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#c9a84c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+      <div className="w-12 h-12 mb-6 border border-white/[0.07] rounded-sm flex items-center justify-center text-[#c9a84c] group-hover:border-[rgba(201,168,76,0.3)] transition-colors">
         {icons[service.icon]}
       </div>
-
-      <h3 className="font-display text-[22px] tracking-[0.06em] text-white mb-3">{service.name}</h3>
+      <h3 className="font-display text-[20px] md:text-[22px] tracking-[0.06em] text-white mb-3">{service.name}</h3>
       <p className="text-[13px] text-[#555] leading-[1.7]">{service.description}</p>
     </div>
   );
@@ -39,22 +35,19 @@ function ServiceCard({ service }: { service: Service }) {
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="py-32 px-12 bg-[#111111] border-t border-b border-white/[0.07]"
-    >
+    <section id="services" className="py-20 md:py-32 px-6 md:px-12 bg-[#111111] border-t border-b border-white/[0.07]">
       <SectionLabel>What I Do</SectionLabel>
       <h2
         className="font-display text-white leading-none tracking-[0.03em] mb-4"
-        style={{ fontSize: "clamp(42px,6vw,80px)" }}
+        style={{ fontSize: "clamp(36px, 6vw, 80px)" }}
       >
         Services
       </h2>
-      <p className="text-[15px] text-[#555] max-w-md leading-[1.7] mb-16">
+      <p className="text-[15px] text-[#555] max-w-md leading-[1.7] mb-12 md:mb-16">
         End-to-end solutions from architecture to deployment, and from raw footage to final cut.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-px">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} />
         ))}

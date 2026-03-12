@@ -23,10 +23,17 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sambel CODE -Portfolio",
+  title: "Sambel Code — Fullstack Developer & Visual Editor",
   description:
-    "Fullstack Developer & Visual Editor. Crafting scalable web applications and cinematic visual experiences.",
-  keywords: ["fullstack", "developer", "photo editor", "video editor", "portfolio"],
+    "Portfolio of Sambel Code, a fullstack developer and visual editor based in Indonesia.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
 };
 
 export default function RootLayout({

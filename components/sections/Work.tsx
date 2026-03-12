@@ -4,7 +4,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { projects } from "@/lib/data";
 import type { Project } from "@/types";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <article className="group relative overflow-hidden bg-[#111111] border border-white/[0.05] hover:border-[rgba(201,168,76,0.3)] transition-all duration-300">
       {/* Image */}
@@ -13,6 +13,10 @@ function ProjectCard({ project }: { project: Project }) {
           src={project.image}
           alt={project.title}
           fill
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUEB//EACMQAAIBBAIBBQAAAAAAAAAAAAECAwQREiExBRNBUWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amq1vbWayt7eKNZJXZn3OB6Y8epJz96hs9Vu7q7aC3hEjlgpCjODjJP71GXkSyXTyMMs5LH7muSztp7e4WeGQpIhyrD2oA//Z"
           className="object-cover brightness-[0.6] saturate-[0.7] group-hover:brightness-[0.75] group-hover:scale-105 transition-all duration-700"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
@@ -48,7 +52,6 @@ export default function Work() {
 
   return (
     <section id="work" className="py-20 md:py-32 px-6 md:px-12 bg-[#080808]">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 md:mb-16 gap-4">
         <div>
           <SectionLabel>Selected Work</SectionLabel>
@@ -69,17 +72,17 @@ export default function Work() {
         </Link>
       </div>
 
-      {/* Featured project — full width on mobile */}
+      {/* Featured — priority load (above fold) */}
       {featured && (
         <div className="mb-px">
-          <ProjectCard project={featured} />
+          <ProjectCard project={featured} priority={true} />
         </div>
       )}
 
-      {/* Rest — 1 col mobile, 2 col tablet, rest fill */}
+      {/* Rest — lazy load */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-px">
         {rest.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} priority={false} />
         ))}
       </div>
     </section>

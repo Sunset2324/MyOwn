@@ -75,3 +75,20 @@ body::before {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Reduce motion for performance & accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Disable heavy blur on mobile for performance ── */
+@media (max-width: 768px) {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+}

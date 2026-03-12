@@ -1,20 +1,19 @@
 import type { Project, Service, Skill, Stat } from "@/types";
 
 export const siteConfig = {
-  name: "Sambel",
+  name: "SAMBEL",
   nameAccent: "CODE",
   tagline: "FULLSTACK\nDEVELOPER\n& VISUAL EDITOR",
   description:
     "I craft scalable web applications and compelling visual stories — merging engineering precision with cinematic aesthetics.",
   availableForWork: true,
   socials: {
-    instagram: "https://www.instagram.com/rafasyamcode/",
+    twitter: "#",
     linkedin: "#",
-    github: "https://github.com/Sunset2324",
+    github: "#",
     dribbble: "#",
   },
-  // 🎵 Replace with your direct audio URL (mp3, wav, etc.)
-musicUrl: "https://raw.githubusercontent.com/Sunset2324/portfolio_asset/main/Path%20to%20Freedom_spotdown.org%20(1).mp3",
+  musicUrl: "https://raw.githubusercontent.com/Sunset2324/portfolio_asset/main/Path%20to%20Freedom_spotdown.org%20(1).mp3",
   musicTrackName: "audiomachine - Path to Freedom",
 };
 
@@ -26,11 +25,11 @@ export const stats: Stat[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React / Next.js", percentage: 0 },
-  { name: "Node.js / APIs", percentage: 0 },
-  { name: "Video Editing (Premiere / DaVinci)", percentage: 0 },
-  { name: "Photo Editing (Lightroom / PS)", percentage: 0 },
-  { name: "Database Design", percentage: 0 },
+  { name: "React / Next.js", percentage: 95 },
+  { name: "Node.js / APIs", percentage: 90 },
+  { name: "Video Editing (Premiere / DaVinci)", percentage: 92 },
+  { name: "Photo Editing (Lightroom / PS)", percentage: 88 },
+  { name: "Database Design", percentage: 85 },
 ];
 
 export const projects: Project[] = [
@@ -40,54 +39,46 @@ export const projects: Project[] = [
     description:
       "End-to-end e-commerce platform with real-time inventory, payments, and analytics dashboard.",
     tag: "FULLSTACK",
-    year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=2670&auto=format&fit=crop",
-    link: "https://rent-vault.vercel.app/",
+    year: "2024",
+    // w=800 keeps quality while reducing file size significantly
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=75&w=800&auto=format&fit=crop",
+    link: "#",
     featured: true,
   },
   {
     id: "cinematic-reel",
     title: "Cinematic Reel",
-    description:
-      "Brand film and motion graphics for a luxury lifestyle client.",
+    description: "Brand film and motion graphics for a luxury lifestyle client.",
     tag: "VIDEO",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1536240478700-b869ad10e2c8?q=80&w=2000&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1536240478700-b869ad10e2c8?q=75&w=800&auto=format&fit=crop",
     link: "#",
   },
   {
     id: "analytics-hub",
     title: "Analytics Hub",
-    description:
-      "Real-time data visualization platform for SaaS metrics.",
+    description: "Real-time data visualization platform for SaaS metrics.",
     tag: "FULLSTACK",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=75&w=800&auto=format&fit=crop",
     link: "#",
   },
   {
     id: "urban-light",
     title: "Urban Light Series",
-    description:
-      "Night photography series exploring city architecture and neon light.",
+    description: "Night photography series exploring city architecture and neon light.",
     tag: "PHOTO",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2670&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=75&w=800&auto=format&fit=crop",
     link: "#",
   },
   {
     id: "securevault",
     title: "SecureVault App",
-    description:
-      "Enterprise password and secrets manager with zero-knowledge encryption.",
+    description: "Enterprise password and secrets manager with zero-knowledge encryption.",
     tag: "FULLSTACK",
     year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=800&auto=format&fit=crop",
     link: "#",
   },
 ];

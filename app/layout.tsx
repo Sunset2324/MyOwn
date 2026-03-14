@@ -55,9 +55,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         {/* Preconnect to image CDN for faster LCP */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://raw.githubusercontent.com" />
+        <link rel="preload" href="https://images.unsplash.com" />
+        <link rel="preload" href="https://images.unsplash.com" />
+        <link rel="preload" href="https://raw.githubusercontent.com" />
       </head>
       <body
         className={`${bebasNeue.variable} ${dmSans.variable} ${dmMono.variable} font-sans bg-[#080808] text-[#c8c8c8] antialiased overflow-x-hidden`}

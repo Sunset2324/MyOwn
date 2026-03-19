@@ -17,14 +17,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           poster="/video-poster.jpg"
         >
-          {/*
-            🎬 Ganti src dengan path video kamu
-            Taruh file video di folder public/ dengan nama hero-video.mp4
-            Atau pakai URL GitHub raw:
-            https://raw.githubusercontent.com/Sunset2324/portfolio_asset/main/video.mp4
-          */}
-          <source src="/hero-video.webm" type="video/webm" />
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/diph92byu/video/upload/v1773926276/5fb2300b-2770-4185-98d1-23a3a39a5e9e_iowjlf.mp4" type="video/mp4" />
         </video>
 
         {/* Sedikit redupkan video */}

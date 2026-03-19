@@ -3,11 +3,72 @@ import { siteConfig } from "@/lib/data";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-[100px] pb-16 px-6 md:px-12 overflow-hidden">
-      <div className="w-full max-w-4xl">
+
+      {/* ── Video Panel (kanan) — desktop only ── */}
+      <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden md:block z-0 pointer-events-none">
+
+        {/* Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/video-poster.jpg"
+        >
+          {/*
+            🎬 Ganti src dengan path video kamu
+            Taruh file video di folder public/ dengan nama hero-video.mp4
+            Atau pakai URL GitHub raw:
+            https://raw.githubusercontent.com/Sunset2324/portfolio_asset/main/video.mp4
+          */}
+          <source src="/hero-video.webm" type="video/webm" />
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+
+        {/* Sedikit redupkan video */}
+        <div className="absolute inset-0 bg-[#080808]/40" />
+
+        {/* ── Fade Shadows ── */}
+
+        {/* Kiri — paling penting, menyatu dengan teks */}
+        <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-[#080808] via-[#080808]/90 to-transparent" />
+
+        {/* Kanan tepi */}
+        <div className="absolute inset-y-0 right-0 w-[20%] bg-gradient-to-l from-[#080808] to-transparent" />
+
+        {/* Atas */}
+        <div className="absolute inset-x-0 top-0 h-[35%] bg-gradient-to-b from-[#080808] to-transparent" />
+
+        {/* Bawah */}
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#080808] to-transparent" />
+
+        {/* Vignette — efek sinematik */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 70% 50%, transparent 25%, rgba(8,8,8,0.65) 100%)",
+          }}
+        />
+
+        {/* Noise texture untuk mengurangi kesan video "nempel" */}
+        <div
+          className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+      </div>
+
+      {/* ── Content (kiri) ── */}
+      <div className="relative z-10 w-full max-w-2xl">
         {/* Badge */}
         {siteConfig.availableForWork && (
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-white/[0.07] rounded-sm bg-[#111] backdrop-blur-sm animate-[fadeUp_0.8s_ease_forwards] opacity-0"
+            className="inline-flex items-center gap-2 px-3 py-1.5 mb-8 border border-white/[0.07] rounded-sm bg-[#111]/80 backdrop-blur-sm animate-[fadeUp_0.8s_ease_forwards] opacity-0"
             style={{ animationDelay: "0.1s" }}
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
@@ -20,11 +81,16 @@ export default function Hero() {
         {/* Headline */}
         <h1
           className="font-display leading-[0.92] tracking-[0.02em] text-white mb-6 md:mb-8 animate-[fadeUp_0.8s_ease_forwards] opacity-0"
-          style={{ fontSize: "clamp(52px, 10vw, 140px)", animationDelay: "0.25s" }}
+          style={{ fontSize: "clamp(52px, 9vw, 130px)", animationDelay: "0.25s" }}
         >
           FULL<span className="text-[#c9a84c]">STACK</span>
           <br />
-          <span style={{ WebkitTextStroke: "1px rgba(255,255,255,0.25)", color: "transparent" }}>
+          <span
+            style={{
+              WebkitTextStroke: "1px rgba(255,255,255,0.25)",
+              color: "transparent",
+            }}
+          >
             DEVELOPER
           </span>
           <br />
@@ -33,7 +99,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className="text-[15px] md:text-[16px] leading-[1.75] text-[#555] max-w-[520px] mb-10 md:mb-12 animate-[fadeUp_0.8s_ease_forwards] opacity-0"
+          className="text-[15px] md:text-[16px] leading-[1.75] text-[#555] max-w-[460px] mb-10 md:mb-12 animate-[fadeUp_0.8s_ease_forwards] opacity-0"
           style={{ animationDelay: "0.4s" }}
         >
           {siteConfig.description}
@@ -59,9 +125,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator — desktop only */}
-      <div className="absolute bottom-10 right-12 hidden md:flex flex-col items-center gap-4 opacity-30">
-        <span className="font-mono text-[9px] tracking-[0.2em] [writing-mode:vertical-rl]">SCROLL DOWN</span>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 right-12 hidden md:flex flex-col items-center gap-4 opacity-30 z-10">
+        <span className="font-mono text-[9px] tracking-[0.2em] [writing-mode:vertical-rl]">
+          SCROLL DOWN
+        </span>
         <div className="w-px h-16 bg-gradient-to-b from-transparent to-white" />
       </div>
     </section>
